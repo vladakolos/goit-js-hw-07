@@ -26,14 +26,14 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
+let galleryHTML = '';
 
 images.forEach(image => {
-  gallery.insertAdjacentHTML(
-    'beforeend',
-    `<li><img src="${image.url}" 
+  galleryHTML += `<li><img src="${image.url}" 
     alt="${image.alt}" 
     width="360"
     height="300"
-    class="gallery-image"></li>`
-  );
+    class="gallery-image"></li>`;
 });
+
+gallery.innerHTML = galleryHTML;
